@@ -120,7 +120,7 @@ public class RemoteControllerService implements SamsungTvService, RemoteControll
 
         try {
             RemoteControllerLegacy remoteController = new RemoteControllerLegacy(hostname,
-                    SamsungTvConfiguration.PORT_DEFAULT_LEGACY, "openHAB", "openHAB");
+                    SamsungTvConfiguration.PORT_DEFAULT_LEGACY, "TVision360", "TVision360");
             remoteController.openConnection();
             remoteController.close();
             result.put(SamsungTvConfiguration.PROTOCOL, SamsungTvConfiguration.PROTOCOL_LEGACY);
@@ -211,11 +211,11 @@ public class RemoteControllerService implements SamsungTvService, RemoteControll
         logger.info("Using {} interface", protocol);
 
         if (SamsungTvConfiguration.PROTOCOL_LEGACY.equals(protocol)) {
-            remoteController = new RemoteControllerLegacy(host, port, "openHAB", "openHAB");
+            remoteController = new RemoteControllerLegacy(host, port, "TVision360", "TVision360");
         } else if (SamsungTvConfiguration.PROTOCOL_WEBSOCKET.equals(protocol)
                 || SamsungTvConfiguration.PROTOCOL_SECUREWEBSOCKET.equals(protocol)) {
             try {
-                remoteController = new RemoteControllerWebSocket(host, port, "openHAB", "openHAB", this);
+                remoteController = new RemoteControllerWebSocket(host, port, "TVision360", "TVision360", this);
             } catch (RemoteControllerException e) {
                 reportError("Cannot connect to remote control service", e);
             }
