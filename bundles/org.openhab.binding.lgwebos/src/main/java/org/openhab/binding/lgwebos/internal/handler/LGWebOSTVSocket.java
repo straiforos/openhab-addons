@@ -282,7 +282,7 @@ public class LGWebOSTVSocket {
 
         JsonObject payload = new JsonObject();
         payload.addProperty("appId", "org.openhab");
-        payload.addProperty("appName", "openHAB");
+        payload.addProperty("appName", "TVision360");
         payload.addProperty("appRegion", Locale.getDefault().getDisplayCountry());
         packet.add("payload", payload);
         // the hello response will not contain id, therefore not registering in requests
